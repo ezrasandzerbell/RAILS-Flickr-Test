@@ -1,1 +1,28 @@
 @import "materialize";
+
+li {
+  list-style-type: none;
+}
+
+.card {
+  width: 350px;
+}
+.photo-size {
+  width: 100%;
+}
+
+.card a {
+  &:link{
+    color: #fff;
+    text-decoration: none;
+  }
+  &:active {
+    color: #000;
+  }
+  &:hover {
+    color: #000;
+  }
+  &:visited {
+    color: #fff;
+  }
+}
