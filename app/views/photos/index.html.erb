@@ -1,0 +1,22 @@
+<h1>Index</h1>
+
+<div class="well">
+
+<% if @photos.any? %>
+<% @photos.each do |photo| %>
+ <li>
+   <%= link_to photo.title, photo_path(photo) %>
+
+ </li>
+ <% end %>
+ <% else %>
+<p>
+  There are no photos
+</p>
+<% end %>
+</div>
+<br>
+<div class ="bar">
+</div>
+<br>
+<%= link_to "New photo", new_photo_path %>
