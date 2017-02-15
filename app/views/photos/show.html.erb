@@ -3,7 +3,7 @@
 <%= @photo.title %>
 <%= @photo.user.email %>
 
-<% if current_user  %>
+<% if current_user == @photo.user  %>
 <%= link_to "Edit photo", edit_photo_path %>
 <%= link_to "Delete photo", photo_path(@photo, @photo.id), :data => {:confirm => "Are you sure?",:method => "delete"}%>
 <% end %>

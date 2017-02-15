@@ -1,7 +1,9 @@
 class PhotosController < ApplicationController
 
   def index
-    @photos = Photo.all
+    # @photos = Photo.all
+    @user = current_user      # filtering by user
+    @photos = @user.photos
   end
 
   def show
