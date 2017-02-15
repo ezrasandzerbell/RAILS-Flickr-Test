@@ -1,0 +1,6 @@
+
+<%= form_for [@photo, @tag] do |f| %>
+  <%= f.label :name,'Tag Name' %>
+  <%= f.text_field :name, :class => 'form-control' %>
+  <%= f.submit %>
+<% end %>

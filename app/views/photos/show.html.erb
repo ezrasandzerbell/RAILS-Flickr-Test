@@ -3,7 +3,18 @@
 <%= @photo.title %>
 <%= @photo.user.email %>
 
+<% if @photo.tags.any? %>
+  <% @photo.tags.each do |tag| %>
+    <%= tag.name %>
+  <% end %>
+  <% else %>
+  <p>
+    No tags
+  </p>
+<% end %>
+
 <% if current_user == @photo.user  %>
 <%= link_to "Edit photo", edit_photo_path %>
 <%= link_to "Delete photo", photo_path(@photo, @photo.id), :data => {:confirm => "Are you sure?",:method => "delete"}%>
+<%= link_to "Add Tag", new_photo_tag_path(@photo) %>
 <% end %>
