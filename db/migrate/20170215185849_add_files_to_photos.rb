@@ -1,5 +1,5 @@
 class AddFilesToPhotos < ActiveRecord::Migration[5.0]
   def change
-    # add_column :photos, :imgfile, :attachment
+    add_attachment :photos, :imgfile
   end
 end

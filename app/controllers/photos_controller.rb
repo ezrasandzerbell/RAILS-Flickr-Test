@@ -13,7 +13,7 @@ class PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(:title => photo_params[:title], :details => photo_params[:details], :user_id => current_user.id)
+    @photo = Photo.new(:title => photo_params[:title], :details => photo_params[:details], :imgfile => photo_params[:imgfile], :user_id => current_user.id)
     if @photo.save
       flash[:notice] = "Photo added!"
       redirect_to photos_path
@@ -26,6 +26,6 @@ class PhotosController < ApplicationController
 
 private
   def photo_params
-    params.require(:photo).permit(:title, :details)
+    params.require(:photo).permit(:title, :details, :imgfile)
   end
 end
