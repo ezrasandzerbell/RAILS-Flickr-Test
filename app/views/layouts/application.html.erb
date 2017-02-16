@@ -14,8 +14,9 @@
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">Flickr</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><%= link_to "You", photos_path %> </li>
+
           <% if current_user %>
+          <li><%= link_to "You", photos_path %> </li>
           <li><%= current_user.email %></li>
           <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
           <% else %>

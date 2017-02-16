@@ -1,5 +1,7 @@
 
-<%= image_tag @photo.imgfile %>
+<div class="card blue-grey darken-1 size-big">
+  <div class="card-content white-text">
+<%= image_tag @photo.imgfile, :class => "photo-size" %>
 <%= @photo.title %>
 <%= @photo.user.email %>
 
@@ -12,7 +14,8 @@
     No tags
   </p>
 <% end %>
-
+</div>
+</div>
 <% if current_user == @photo.user  %>
 <%= link_to "Edit photo", edit_photo_path %>
 <%= link_to "Delete photo", photo_path(@photo, @photo.id), :data => {:confirm => "Are you sure?",:method => "delete"}%>
