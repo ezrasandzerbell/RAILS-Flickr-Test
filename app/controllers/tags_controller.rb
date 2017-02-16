@@ -1,7 +1,12 @@
 class TagsController < ApplicationController
 
     def show
-
+      @photo = Photo.find(params[:photo_id])
+      puts @photo.tags.inspect
+      tag = Tag.find(params[:id])
+      puts tag.inspect
+      @photoArray = tag.findTaggedPhotos
+      puts @photoArray.inspect
     end
 
     def new

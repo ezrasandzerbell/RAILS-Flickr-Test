@@ -18,14 +18,16 @@
           <% if current_user %>
           <li><%= link_to "You", photos_path, :class => 'main-links' %> </li>
           <div class="right">
-          <li><%= current_user.email %></li>
-          <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+            <li><%= current_user.email %></li>
+            <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+          </div>
           <% else %>
-          <li>  <%= link_to "Log-in", new_user_session_path %> |</li>
-          <li><%= link_to "Signup", new_user_registration_path %></li>
+            <div class="right">
+              <li>  <%= link_to "Log-in", new_user_session_path %> |</li>
+              <li><%= link_to "Signup", new_user_registration_path %></li>
+            </div>
           <% end %>
           </ul>
-          </div>
         </div>
     </nav>
     <div class="container">
