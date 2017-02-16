@@ -4,10 +4,12 @@
 <%= image_tag @photo.imgfile, :class => "photo-size" %>
 <%= @photo.title %>
 <%= @photo.user.email %>
-
+<br>
 <% if @photo.tags.any? %>
   <% @photo.tags.each do |tag| %>
-    <%= tag.name %>
+
+  <%= link_to tag.name + " X", photo_tag_path(@photo, tag.id), :data => {:confirm => "Are you sure?",:method => "delete"}, :class => "chip"%>
+  <%= link_to "Rename", edit_photo_tag_path(@photo, tag.id), :class => "waves-effect waves-light btn" %> <br>
   <% end %>
   <% else %>
   <p>
@@ -17,7 +19,7 @@
 </div>
 </div>
 <% if current_user == @photo.user  %>
-<%= link_to "Edit photo", edit_photo_path %>
+<%= link_to "Edit", edit_photo_path %>
 <%= link_to "Delete photo", photo_path(@photo, @photo.id), :data => {:confirm => "Are you sure?",:method => "delete"}%>
 <%= link_to "Add Tag", new_photo_tag_path(@photo) %>
 <% end %>

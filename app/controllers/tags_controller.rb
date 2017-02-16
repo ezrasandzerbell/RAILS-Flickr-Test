@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
     def show
-      @tag = Tag.find(params[:id])
+
     end
 
     def new
@@ -31,7 +31,7 @@ class TagsController < ApplicationController
         @tag = Tag.find(params[:id])
         if @tag.update(tag_params)
           flash[:notice] = "Tag updated!"
-          redirect_to photo_tag_path
+          redirect_to photo_path(@photo.id)
         else
           render :edit
         end
@@ -42,7 +42,7 @@ class TagsController < ApplicationController
       @tag = Tag.find(params[:id])
       @tag.destroy
       flash[:notice] = "Tag deleted!"
-      redirect_to photo_tag_path(@photo)
+      redirect_to photo_path(@photo)
     end
 
   private
