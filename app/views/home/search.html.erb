@@ -1,0 +1,9 @@
+<% if @photoSearchResults %>
+  <% @photoSearchResults.each do |photo| %>
+  <%= image_tag photo.imgfile %>
+  <% end %>
+<% else %>
+  <p>
+    There are no search results.
+  </p>
+<% end %>

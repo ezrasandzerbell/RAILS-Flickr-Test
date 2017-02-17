@@ -1,5 +1,14 @@
 <h1>Flickr Home</h1>
 
+<%= form_tag(search_path, method: 'post', class:'navbar-form navbar-right') do %>
+    <div class="form-group">
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search" %>
+    </div>
+    <button type="submit" class="btn btn-info"> Search
+    </button>
+  <% end %>
+
+
 
 <% if @photos.any? %>
 <% @photos.each do |photo| %>

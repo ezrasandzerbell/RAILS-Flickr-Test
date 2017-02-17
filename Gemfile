@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'materialize-sass'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'textacular'
 
 group :development, :test do
   gem 'byebug', platform: :mri
