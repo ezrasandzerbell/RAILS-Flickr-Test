@@ -8,16 +8,14 @@
    <div class="card white">
      <div class="card-title">
        <%= link_to photo.title, photo_path(photo) %> <br>
-        <div class="">
           <%= time_ago_in_words(photo.created_at, :class => "test" ) %> ago
-      </div>
         <!-- <h5><%= photo.created_at.strftime("%m-%d-%Y")%></h5> -->
      </div>
      <div class="card-content">
-    <%= image_tag photo.imgfile, :class => "photo-size" %>
-     <p>
-        <%= photo.details%>
-     </p>
+    <%= link_to image_tag(photo.imgfile, :class => "photo-size"), photo_path(photo) %>
+       <div class="center">
+         <%= photo.details %>
+       </div>
    </div>
   </div>
 

@@ -6,11 +6,7 @@ class HomeController < ApplicationController
     # @photos = @user.photos
   end
 
-  def search
+  def show
     @photoSearchResults = Photo.basic_search(params[:query])
-    puts @photoSearchResults.inspect
-    render :search
   end
-
-
 end
